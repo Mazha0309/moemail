@@ -10,7 +10,8 @@ const KV_NAMESPACE_NAME = process.env.KV_NAMESPACE_NAME || "moemail-kv";
 const DATABASE_ID = process.env.DATABASE_ID;
 
 const client = new Cloudflare({
-  token: CF_API_TOKEN,
+  apiKey: CF_API_TOKEN,
+  email: process.env.CLOUDFLARE_EMAIL,
 });
 
 export const getPages = async () => {
